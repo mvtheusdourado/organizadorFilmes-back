@@ -12,12 +12,32 @@ export class FilmeController{
         res.status(200).send();
     }
 
-    // delete();
+    async delete(req: Request, res: Response)
+    {
+        const id = Number(req.params.id);
+        await filmeService.delete(id);
+        res.status(200).send();
+    }
 
-    // update();
+    async update(req:Request, res:Response)
+    {
+        const id = Number(req.params.id);
+        const dados = req.body;
+        await filmeService.update(id,dados);
+        res.status(200).send();
+    }
 
-    // findAll();
+    async findAll(req:Request, res:Response)
+    {
+        const filmes = await filmeService.findAll();
+        res.status(200).json(filmes);
+    }
 
-    // findById();
+    async findById(req:Request, res:Response)
+    {
+        const id = Number(req.params.id);
+        const filme = await filmeService.findById(id);
+        res.status(200).json(filme);
+    }
 
 }
