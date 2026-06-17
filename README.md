@@ -8,12 +8,14 @@ Utilizamos as seguinte tecnologias
 - SQLite
 - Typescript
 
-Para instalar as dependências e usar o banco de dados siga os passos:
+Para instalar as dependências.
 - npm i
-- npx prisma generate
 
 Criar o arquivo .env na raiz do projeto:
 - Adicionar a variável DATABASE_URL="file:./app.db"
+
+Para gerar o banco de dados:
+- npx prisma generate
 
 Para rodar o projeto:
 - npm run dev
